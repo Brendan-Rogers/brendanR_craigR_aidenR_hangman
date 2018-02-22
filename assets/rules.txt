@@ -1,0 +1,15 @@
+Hangman
+
+1 - p1 makes a word
+2 - word is hidden behind blanks
+3 - p2 guesses letters
+	•	Every missed letter is catalogued 
+	◦	Cannot be guessed again 
+	◦	Displayed in box 
+	•	Every hit letter is shown in word 
+
+Win Condition:
+	The entire word is guessed
+
+Lose Condition
+	X amount of non-present letters are guessed
