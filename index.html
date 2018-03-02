@@ -8,12 +8,39 @@
 </head>
 
 <body>
-
 	<h1>Hangman</h1>
 	<p class="hint-string"></p>
 
 	<input type="text" class="user-guess">
 	<button class="init-button">Run init script</button>
+
+	<div id="gallows">
+		<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347.92 252.79">
+		  <defs>
+		    <style>
+		      .cls-1 {
+		        fill: #fff;
+		        stroke: #231f20;
+		        stroke-miterlimit: 10;
+		      }
+		    </style>
+		  </defs>
+		  <title>gallows</title>
+		  <polyline id="base" class="cls-1" points="0 252.28 168.87 252.28 337.73 252.28"/>
+		  <polyline id="gallow" class="cls-1" points="309.89 54.97 309.89 0.5 168.87 0.5 168.87 252.28"/>
+		  <circle id="head" class="cls1 wrong0" cx="309.89" cy="92.5" r="37.53"/>
+		  <line id="body" class="cls1 wrong1" x1="309.89" y1="186.92" x2="309.89" y2="130.02"/>
+		  <line id="legLeft" class="cls1 wrong2" x1="272.36" y1="226.86" x2="305.87" y2="191.36"/>
+		  <line id="legRight" class="cls1 wrong3" x1="334.08" y1="226.86" x2="312.55" y2="191.36"/>
+		  <line id="armLeft" class="cls1 wrong4" x1="268.01" y1="158.47" x2="305.87" y2="134.94"/>
+		  <line id="armRight" class="cls1 wrong5" x1="318.11" y1="134.94" x2="345.21" y2="158.47"/>
+	</svg>
+	</div>
+
+	<section class="reset-screen">
+		<h3>Game Over Try Again</h3>
+		<button>Try Again</button>
+	</section>
 
 <!-- Always put ya Script tag at the end of DOM  -->
 <script src="js/main.js"></script>
