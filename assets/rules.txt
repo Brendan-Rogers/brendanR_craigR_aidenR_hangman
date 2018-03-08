@@ -1,5 +1,7 @@
 Hangman
 
+a competitive version
+{
 1 - p1 makes a word
 2 - word is hidden behind blanks
 3 - p2 guesses letters
@@ -13,3 +15,26 @@ Win Condition:
 
 Lose Condition
 	X amount of non-present letters are guessed
+}
+
+vs computer
+{
+- computer selects a random word
+- breaks word into composite letters (array)
+- display that array as underscores
+- player enters a character in an input box
+- computer compares that character to the array
+- if the character doesnt match the array
+	- a body part is drawn in the noose
+	- that letter is added to a visible list of wrong letters
+- if the player gets a full hangman
+	- show a "game over" screen
+	- reset the variables
+	- offer a reset button
+- if the character matches the array
+	- replace the corresponding underscore with that character
+- if the player guessses the full word
+	- show a "you win" screen
+	- reset the variables
+	- offer a reset button
+}
