@@ -98,11 +98,19 @@ margin-top: 50px;
 .wrong-letters
 {
 	margin-left: 400px;
+	border: 1px solid;
+	width: 200px;
+	font-size: 50px;
+	background-color: beige;
 }
 
-.wrong-letters p
+.hintString
 {
-	font-size: 40px;
+	border: 1px solid;
+	width: 200px;
+	margin-bottom: 20px;
+	font-size: 50px;
+	background-color: beige;	
 }
 
 
