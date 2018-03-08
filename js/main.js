@@ -2,7 +2,7 @@
 
 
 // VARIABLES
-const words = ["blue", "orange", "yellow", "magenta", "violet"];
+const words = ["black keys", "beach fossils", "screaming females", "fleet foxes", "interpol", "kanye", "yung lean"];
 
 let initButton = document.querySelector('button');
 
@@ -13,11 +13,14 @@ let currentWord = null,
 	resetButton = resetScreen.querySelector('button'),
 	wrongLetterList = document.querySelector('.wrong-letters'),
 	wrongLetterArray = [],
-	wrongGuesses = 0;
+	wrongGuesses = 0,
+	correctGuesses = 0;
 
 // FUNCTIONS
 function init() {
-	// look at MDN -> the Math object 	words[Math.floor(Math.random()*words.length)];
+	// look at MDN -> the Math object
+	currentWord =
+	words[Math.floor(Math.random()*words.length)];
 
 	// map takes existing information in an array and transforms it
 	// fills hint with udnerscores
@@ -30,13 +33,8 @@ function init() {
 function takeGuess() {
 	console.log(this.value)
 
-	// Empty String Catcher
-	// OR is ||
-	if (this.value == "" || this.value.length <1 ) {
-		return;
-	}
 
-	let currentGuess = this.value;
+	let currentGuess = this.value
 
 	// win / lose conditions
 	if (!currentWord.includes(this.value)) {
@@ -51,21 +49,45 @@ function takeGuess() {
 
 		if (wrongGuesses >= 5) {
 			// increment wrongGuesses
-			showResetScreen();
+			showResetScreen("you lose");
 		} else {
 			wrongGuesses++;
 		}
-	} else {
-		// the WINNING PATH
-		let matchAgainst = currentWord.split("");
-		let hintString = wordHint.textContent.split("");
+
+	} else{
+//this else meatches the if on line 40 => this will be the winning path
+let matchAgainst = currentWord.split("");
+var hintString = wordHint.textContent.split("");
+
+matchAgainst.forEach((letter, index) => {
+	if (letter === currentGuess) {
+		hintString[index] =currentGuess;
+		correctGuesses++; //make sure to track correct guesses
+	}
+
+});
+
+wordHint.textContent = ""; //make the hint on the screen be Empty
+wordHint.textContent = hintString.join(" ");
+
+if (correctGuesses === currentWord.length){
+	showResetScreen("You win");
+}
+}
+
+
+	// Empty String Catcher
+	// OR is ||
+	if (this.value == "" || this.value.length <1 ) {
+		return;
 	}
 }
 
-function showResetScreen() {
+function showResetScreen(message) {
 	// user has lost, reset stuff and start over
 	console.log(`YOU HAVE LOST`);
 	resetScreen.classList.add('show-piece');
+	resetScreen.querySelector('h3').textContent = message;
 }
 
 function resetGame() {
