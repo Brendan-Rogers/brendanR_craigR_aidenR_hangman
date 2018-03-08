@@ -2,7 +2,7 @@
 
 
 // VARIABLES
-const words = ["black keys", "beach fossils", "screaming females", "fleet foxes", "interpol", "kanye", "yung lean"];
+const words = ["black", "beach", "screaming", "fleet", "interpol", "kanye", "yung"];
 
 let initButton = document.querySelector('button');
 
