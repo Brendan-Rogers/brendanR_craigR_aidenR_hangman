@@ -17,9 +17,7 @@ let currentWord = null,
 
 // FUNCTIONS
 function init() {
-	// look at MDN -> the Math object
-	currentWord =
-	words[Math.floor(Math.random()*words.length)];
+	// look at MDN -> the Math object 	words[Math.floor(Math.random()*words.length)];
 
 	// map takes existing information in an array and transforms it
 	// fills hint with udnerscores
@@ -31,6 +29,14 @@ function init() {
 
 function takeGuess() {
 	console.log(this.value)
+
+	// Empty String Catcher
+	// OR is ||
+	if (this.value == "" || this.value.length <1 ) {
+		return;
+	}
+
+	let currentGuess = this.value;
 
 	// win / lose conditions
 	if (!currentWord.includes(this.value)) {
@@ -48,13 +54,11 @@ function takeGuess() {
 			showResetScreen();
 		} else {
 			wrongGuesses++;
-		}	
-	} 
-
-	// Empty String Catcher
-	// OR is ||
-	if (this.value == "" || this.value.length <1 ) {
-		return;
+		}
+	} else {
+		// the WINNING PATH
+		let matchAgainst = currentWord.split("");
+		let hintString = wordHint.textContent.split("");
 	}
 }
 
